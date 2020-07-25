@@ -1,6 +1,6 @@
 {
   "name": "@sudoo/webpack-node",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": ":smiling_imp: Node Webpack configurations",
   "repository": {
     "type": "git",
