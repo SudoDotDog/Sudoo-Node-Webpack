@@ -22,8 +22,8 @@ export const getWebpackTarget = (setting: SudooWebpackSetting): WebpackTarget =>
 
     if (setting.electron) {
 
-        return 'electron-renderer';
+        return 'electron-main';
     }
 
-    return 'web';
+    return 'node';
 };

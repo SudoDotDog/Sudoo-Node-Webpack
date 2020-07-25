@@ -28,15 +28,10 @@ export const createDevConfig = (
         devtool: 'cheap-module-eval-source-map',
         mode: "development",
         entry: {
-            index: [
-                'react-hot-loader/patch',
-                'webpack-dev-server/client',
-                'webpack/hot/only-dev-server',
-                Path.join(paths.applicationPath, paths.applicationEntryFile),
-            ],
+            index: Path.join(paths.applicationPath, paths.applicationEntryFile),
         },
         output: {
-            filename: "[name].bundle.js",
+            filename: setting.outputFileName ?? '[name].bundle.js',
             path: paths.buildPath,
             publicPath: '/',
         },

@@ -10,7 +10,6 @@ import * as Webpack from "webpack";
 import { createAnalyzers } from "./common/analyze";
 import { createCopyPlugins } from "./common/copy";
 import { createDefinePlugin } from "./common/define";
-import { createOptimization } from "./common/optimization";
 import { getStatsSetting } from "./common/status";
 import { createTypescriptLoader, getResolves } from "./common/ts";
 import { SudooWebpackPath, SudooWebpackSetting } from "./declare";
@@ -30,12 +29,11 @@ export const createBuildConfig = (
 
         target: getWebpackTarget(setting),
         mode: 'production',
-        optimization: createOptimization(),
         entry: {
             index: Path.join(paths.applicationPath, paths.applicationEntryFile),
         },
         output: {
-            filename: '[name].[contenthash].bundle.js',
+            filename: setting.outputFileName ?? '[name].bundle.js',
             path: paths.buildPath,
             publicPath: '/',
         },

@@ -23,6 +23,6 @@ export const getResolves = (): {
     readonly resolve: Webpack.Resolve;
 } => ({
     resolve: {
-        extensions: [".ts", ".tsx", ".js", ".json", ".css", ".sass"],
+        extensions: [".ts", ".tsx", ".js", ".json"],
     },
 });

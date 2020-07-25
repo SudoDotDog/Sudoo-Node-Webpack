@@ -29,7 +29,7 @@ export type CopyPlugInElement = {
 
 export type SudooWebpackSetting = {
 
-    readonly title: string;
+    readonly outputFileName?: string;
     readonly electron?: boolean;
 
     readonly silent?: boolean;
