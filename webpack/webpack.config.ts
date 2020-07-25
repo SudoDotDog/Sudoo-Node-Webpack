@@ -35,7 +35,10 @@ export const createBuildConfig = (
         output: {
             filename: setting.outputFileName ?? '[name].bundle.js',
             path: paths.buildPath,
-            publicPath: '/',
+        },
+        node: {
+            __dirname: false,
+            __filename: false,
         },
         ...getStatsSetting(setting),
         ...getResolves(),
