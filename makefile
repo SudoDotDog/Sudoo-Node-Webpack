@@ -35,10 +35,6 @@ clean: clean-linux
 	@echo "[INFO] Cleaning release files"
 	@NODE_ENV=production $(ts_node) script/clean-app.ts
 
-copy:
-	@echo "[INFO] Copying deployment"
-	@NODE_ENV=production $(ts_node) script/copy.ts
-
 lint:
 	@echo "[INFO] Linting"
 	@NODE_ENV=production \
@@ -58,10 +54,10 @@ clean-linux:
 	@rm -rf .nyc_output
 	@rm -rf coverage
 
-publish: install license build copy
+publish: install license build
 	@echo "[INFO] Publishing package"
 	@cd app && npm publish --access=public
 
-publish-dry-run: install tests license build
+publish-dry-run: install license build
 	@echo "[INFO] Publishing package (Dry Run)"
 	@cd app && npm publish --access=public --dry-run
