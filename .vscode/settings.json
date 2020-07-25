@@ -1,0 +1,17 @@
+{
+    "cSpell.words": [
+        "Devl",
+        "RMRF",
+        "Sudoo",
+        "WMXPY",
+        "contenthash",
+        "devtool",
+        "ifeq",
+        "setx",
+        "teamsupercell",
+        "triforce"
+    ],
+    "eslint.options": {
+        "configFile": "./typescript/.eslintrc.json"
+    }
+}
