@@ -12,8 +12,7 @@ import { createCopyPlugins } from "./common/copy";
 import { createDefinePlugin } from "./common/define";
 import { getStatsSetting } from "./common/status";
 import { createTypescriptLoader, getResolves } from "./common/ts";
-import { SudooWebpackPath, SudooWebpackSetting } from "./declare";
-import { getWebpackTarget } from "./util";
+import { getWebpackTarget, SudooWebpackPath, SudooWebpackSetting } from "./declare";
 
 export const createBuildConfig = (
     paths: SudooWebpackPath,
@@ -27,7 +26,7 @@ export const createBuildConfig = (
 
     return {
 
-        target: getWebpackTarget(setting),
+        target: getWebpackTarget(setting.target),
         mode: 'production',
         entry: {
             index: Path.join(paths.applicationPath, paths.applicationEntryFile),

@@ -9,8 +9,7 @@ import * as Webpack from "webpack";
 import { createCopyPlugins } from "./common/copy";
 import { getStatsSetting } from "./common/status";
 import { createTypescriptLoader, getResolves } from "./common/ts";
-import { SudooWebpackPath, SudooWebpackSetting } from "./declare";
-import { getWebpackTarget } from "./util";
+import { getWebpackTarget, SudooWebpackPath, SudooWebpackSetting } from "./declare";
 
 export const createDevConfig = (
     paths: SudooWebpackPath,
@@ -24,7 +23,7 @@ export const createDevConfig = (
 
     return {
 
-        target: getWebpackTarget(setting),
+        target: getWebpackTarget(setting.target),
         devtool: 'cheap-module-eval-source-map',
         mode: "development",
         entry: {
