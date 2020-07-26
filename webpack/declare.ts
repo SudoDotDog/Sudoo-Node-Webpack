@@ -27,10 +27,30 @@ export type CopyPlugInElement = {
     readonly cache?: boolean;
 };
 
+export type WebpackTarget =
+    | 'web'
+    | 'webworker'
+    | 'node'
+    | 'async-node'
+    | 'node-webkit'
+    | 'atom'
+    | 'electron'
+    | 'electron-renderer'
+    | 'electron-preload'
+    | 'electron-main';
+
+export type AvailableWebpackTarget =
+    | 'node'
+    | 'async-node'
+    | 'node-webkit'
+    | 'electron-preload'
+    | 'electron-main';
+
 export type SudooWebpackSetting = {
 
+    readonly target?: AvailableWebpackTarget;
+
     readonly outputFileName?: string;
-    readonly electron?: boolean;
 
     readonly silent?: boolean;
     readonly analyze?: boolean;
@@ -38,4 +58,25 @@ export type SudooWebpackSetting = {
     readonly defines?: Record<string, string>;
     readonly copies?: CopyPlugInElement[];
     readonly plugins?: Webpack.Plugin[],
+};
+
+export const getWebpackTarget = (target?: AvailableWebpackTarget): WebpackTarget => {
+
+    if (!target) {
+        return 'node';
+    }
+
+    const available: AvailableWebpackTarget[] = [
+        'async-node',
+        'electron-main',
+        'electron-preload',
+        'node',
+        'node-webkit',
+    ];
+
+    if (available.includes(target)) {
+        return target;
+    }
+
+    return 'node';
 };
