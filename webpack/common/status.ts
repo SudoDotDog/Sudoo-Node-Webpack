@@ -13,7 +13,20 @@ export const getStatsSetting = (setting: SudooWebpackSetting): {
 
     if (setting.silent) {
         return {
-            stats: 'errors-only',
+            stats: {
+                all: false,
+                errors: true,
+                moduleTrace: true,
+                warningsFilter: setting.warningsFilter,
+            },
+        };
+    }
+
+    if (setting.warningsFilter) {
+        return {
+            stats: {
+                warningsFilter: setting.warningsFilter,
+            },
         };
     }
 
