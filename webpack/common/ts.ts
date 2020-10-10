@@ -20,7 +20,7 @@ export const createTypescriptLoader = (TSCONFIG_DIR: string): Webpack.RuleSetRul
 
 
 export const getResolves = (): {
-    readonly resolve: Webpack.Resolve;
+    readonly resolve: Webpack.ResolveOptions;
 } => ({
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".json"],

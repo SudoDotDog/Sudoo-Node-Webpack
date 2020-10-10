@@ -26,6 +26,9 @@ export const createDevConfig = (
         target: getWebpackTarget(setting.target),
         devtool: 'cheap-module-eval-source-map',
         mode: "development",
+        optimization: {
+            moduleIds: 'named',
+        },
         entry: {
             index: Path.join(paths.applicationPath, paths.applicationEntryFile),
         },
@@ -53,7 +56,6 @@ export const createDevConfig = (
             new Webpack.LoaderOptionsPlugin({
                 debug: true,
             }),
-            new Webpack.NamedModulesPlugin(),
             ...createCopyPlugins(setting.copies),
             ...plugins,
         ],
