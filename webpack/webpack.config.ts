@@ -28,6 +28,10 @@ export const createBuildConfig = (
 
         target: getWebpackTarget(setting.target),
         mode: 'production',
+        optimization: {
+            chunkIds: 'named',
+            moduleIds: 'hashed',
+        },
         entry: {
             index: Path.join(paths.applicationPath, paths.applicationEntryFile),
         },
