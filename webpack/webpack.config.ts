@@ -43,6 +43,9 @@ export const createBuildConfig = (
             __dirname: false,
             __filename: false,
         },
+        stats: {
+
+        },
         ...getStatsSetting(setting),
         ...getResolves(),
         module: {
