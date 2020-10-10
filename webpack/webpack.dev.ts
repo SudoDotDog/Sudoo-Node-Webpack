@@ -16,7 +16,7 @@ export const createDevConfig = (
     setting: SudooWebpackSetting,
 ): Webpack.Configuration => {
 
-    const plugins: Webpack.Plugin[] = setting.plugins || [];
+    const plugins: Webpack.WebpackPluginInstance[] = setting.plugins || [];
     const devConfigPath: string = paths.tsconfigPath
         ? paths.tsconfigPath
         : Path.join(__dirname, 'config', 'tsconfig.dev.json');
