@@ -20,5 +20,5 @@ export const createCopyPlugins = (copies?: CopyPlugInElement[]): any => {
         ];
     }
 
-    return []
+    return [];
 };
