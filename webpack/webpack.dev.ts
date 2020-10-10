@@ -24,7 +24,7 @@ export const createDevConfig = (
     return {
 
         target: getWebpackTarget(setting.target),
-        devtool: 'cheap-module-eval-source-map',
+        devtool: 'eval-cheap-module-source-map',
         mode: "development",
         optimization: {
             moduleIds: 'named',
