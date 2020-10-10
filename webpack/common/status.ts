@@ -4,10 +4,11 @@
  * @description Status
  */
 
+import * as Webpack from "webpack";
 import { SudooWebpackSetting } from "../declare";
 
 export const getStatsSetting = (setting: SudooWebpackSetting): {
-    readonly stats?: any;
+    readonly stats?: Webpack.Stats.ToStringOptions;
 } => {
 
     if (setting.silent) {
