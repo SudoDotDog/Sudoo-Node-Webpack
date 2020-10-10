@@ -16,7 +16,7 @@ export const createDevConfig = (
     setting: SudooWebpackSetting,
 ): Webpack.Configuration => {
 
-    const plugins: Webpack.WebpackPluginInstance[] = setting.plugins || [];
+    const plugins: Webpack.Plugin[] = setting.plugins || [];
     const devConfigPath: string = paths.tsconfigPath
         ? paths.tsconfigPath
         : Path.join(__dirname, 'config', 'tsconfig.dev.json');
@@ -24,7 +24,7 @@ export const createDevConfig = (
     return {
 
         target: getWebpackTarget(setting.target),
-        devtool: 'eval-cheap-module-source-map',
+        devtool: 'cheap-module-eval-source-map',
         mode: "development",
         optimization: {
             moduleIds: 'named',

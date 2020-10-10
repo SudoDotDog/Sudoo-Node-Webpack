@@ -19,7 +19,7 @@ export const createBuildConfig = (
     setting: SudooWebpackSetting,
 ): Webpack.Configuration => {
 
-    const plugins: Webpack.WebpackPluginInstance[] = setting.plugins || [];
+    const plugins: Webpack.Plugin[] = setting.plugins || [];
     const buildConfigPath: string = paths.tsconfigPath
         ? paths.tsconfigPath
         : Path.join(__dirname, 'config', 'tsconfig.build.json');
