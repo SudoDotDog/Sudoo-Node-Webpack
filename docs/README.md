@@ -6,3 +6,11 @@
 [![downloads](https://img.shields.io/npm/dm/@sudoo/webpack-node.svg)](https://www.npmjs.com/package/@sudoo/webpack-node)
 
 :smiling_imp: Node Webpack configurations
+
+## Install
+
+```sh
+yarn add @sudoo/webpack-node --dev
+# Or
+npm install @sudoo/webpack-node --save-dev
+```
