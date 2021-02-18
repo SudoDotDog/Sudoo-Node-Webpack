@@ -33,7 +33,7 @@
   "devDependencies": {
     "@sudoo/io": "1.8.0",
     "@sudoo/triforce": "2.9.15",
-    "@types/copy-webpack-plugin": "6.0.0",
+    "@types/copy-webpack-plugin": "6.4.0",
     "@types/webpack": "4.41.26",
     "@types/webpack-bundle-analyzer": "3.9.0",
     "ts-loader": "8.0.17"
